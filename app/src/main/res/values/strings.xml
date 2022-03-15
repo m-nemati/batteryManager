@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Battery Manager</string>
+    <string name="subtitle_text">In This App You Can:</string>
 </resources>
