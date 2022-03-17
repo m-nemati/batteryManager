@@ -4,19 +4,20 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.batterymanager.databinding.ActivitySplashBinding
 import org.w3c.dom.Text
 import java.util.*
 import kotlin.concurrent.timerTask
 
 class SplashActivity : AppCompatActivity() {
 
-    private lateinit var subTitle: TextView
+    private lateinit var binding: ActivitySplashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
-
-        subTitle = findViewById<TextView>(R.id.tv_subtitle)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         var textArray = arrayListOf(
             "Make your battery powerful",
@@ -41,7 +42,7 @@ class SplashActivity : AppCompatActivity() {
     private fun subTitleGenerator(delayTime: Long, subtitle: String) {
         Timer().schedule(timerTask {
             runOnUiThread(timerTask {
-                subTitle.text = subtitle
+                binding.tvSubtitle.text = subtitle
             })
         }, delayTime)
     }
