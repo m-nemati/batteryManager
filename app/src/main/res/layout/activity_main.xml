@@ -8,6 +8,71 @@
     tools:context=".MainActivity">
 
 
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/circularProgressBar"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        app:cpb_background_progressbar_color="#b6bbd8"
+        app:cpb_background_progressbar_width="5dp"
+        app:cpb_progress_direction="to_right"
+        app:cpb_progressbar_color="@color/green"
+        app:cpb_progressbar_width="10dp"
+        app:cpb_round_border="false"
+        app:layout_constraintStart_toStartOf="@+id/chart_gl1"
+        app:layout_constraintEnd_toEndOf="@+id/chart_gl2"
+        app:layout_constraintTop_toTopOf="@+id/chart_gl3"
+        app:layout_constraintBottom_toTopOf="@+id/chart_gl4" />
+
+    <TextView
+        android:id="@+id/txt_charge"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/large_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/chart_gl2"
+        app:layout_constraintStart_toStartOf="@+id/chart_gl1"
+        app:layout_constraintTop_toTopOf="@+id/chart_gl5" />
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/lighting"
+        app:layout_constraintBottom_toTopOf="@+id/chart_gl5"
+        app:layout_constraintEnd_toEndOf="@+id/circularProgressBar"
+        app:layout_constraintStart_toStartOf="@+id/circularProgressBar" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/chart_gl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/chart_gl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/chart_gl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/chart_gl4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/chart_gl5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.23"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/base_guideline"
         android:layout_width="wrap_content"
@@ -84,7 +149,7 @@
             app:layout_constraintTop_toTopOf="@+id/gl1" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_large"
@@ -95,9 +160,9 @@
             app:layout_constraintTop_toTopOf="@+id/imageView" />
 
         <TextView
+            android:id="@+id/txt_voltage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="25"
             android:textColor="@color/white"
             android:textSize="@dimen/normal_text"
             android:textStyle="bold"
@@ -119,20 +184,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_large"
-            android:text="@string/tv_cpu"
+            android:text="@string/tv_technology"
             android:textColor="@color/alpha_white"
             android:textSize="@dimen/normal_text"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
         <TextView
+            android:id="@+id/txt_technology"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="25"
+            android:layout_marginStart="@dimen/margin_large"
             android:textColor="@color/white"
             android:textSize="@dimen/normal_text"
             android:textStyle="bold"
-            android:layout_marginStart="@dimen/margin_large"
             app:layout_constraintBottom_toBottomOf="@+id/imageView2"
             app:layout_constraintStart_toEndOf="@+id/imageView2" />
 
@@ -146,7 +211,7 @@
         app:layout_constraintTop_toTopOf="@+id/gl2" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_large"
@@ -157,11 +222,10 @@
             app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txt_temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_large"
-            android:text="25"
             android:textColor="@color/white"
             android:textSize="@dimen/normal_text"
             android:textStyle="bold"
@@ -178,7 +242,7 @@
             app:layout_constraintTop_toTopOf="@+id/gl2" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_large"
@@ -189,11 +253,10 @@
             app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/txt_plug"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_large"
-            android:text="25"
             android:textColor="@color/white"
             android:textSize="@dimen/normal_text"
             android:textStyle="bold"
@@ -201,7 +264,6 @@
             app:layout_constraintStart_toEndOf="@+id/imageView4" />
 
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="@color/line_color"
@@ -210,20 +272,20 @@
             app:layout_constraintStart_toStartOf="@+id/gl6" />
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="@color/line_color"
+            android:layout_marginEnd="@dimen/margin_large"
             app:layout_constraintBottom_toTopOf="@+id/gl2"
-            app:layout_constraintEnd_toStartOf="@+id/gl5"
+            app:layout_constraintEnd_toStartOf="@+id/gl4"
             app:layout_constraintStart_toStartOf="@+id/gl6" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="@color/line_color"
-            app:layout_constraintBottom_toTopOf="@+id/gl3"
+            app:layout_constraintBottom_toTopOf="@+id/gl2"
             app:layout_constraintEnd_toStartOf="@+id/gl5"
-            app:layout_constraintStart_toStartOf="@+id/gl6" />
+            app:layout_constraintStart_toStartOf="@+id/gl4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

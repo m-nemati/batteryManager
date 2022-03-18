@@ -3,7 +3,7 @@
     <string name="subtitle_text">In This App You Can:</string>
     <string name="tv_battery_state">Check your battery state</string>
     <string name="tv_voltage">Voltage</string>
-    <string name="tv_cpu">CPU</string>
+    <string name="tv_technology">Technology</string>
     <string name="tv_temperature">Temperature</string>
-    <string name="tv_plug">Plug in</string>
+    <string name="tv_plug">Plug State</string>
 </resources>
